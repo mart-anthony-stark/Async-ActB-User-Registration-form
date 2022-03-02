@@ -131,7 +131,6 @@ if(isset($_POST["signup"])){
         const male = document.querySelector('#male-icon')
         const female = document.querySelector('#female-icon')
         sexInput.addEventListener("change", (e) => {
-            console.log(e.target.value)
             if(e.target.value === 'male'){
                 male.classList.remove("hidden")
                 male.classList.add("shown")
