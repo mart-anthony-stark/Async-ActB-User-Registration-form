@@ -1,24 +1,23 @@
 <?php
 $errors = [];
-$errors["firstname"] = "Firstname must be filled.";
-$errors["lastname"] = "lastname must be filled.";
-$errors["username"] = "username must be filled.";
-$errors["email"] = "email must be filled.";
-$errors["contact"] = "contact must be filled.";
-$errors["password"] = "password must be filled.";
 
-if(isset($_POST["firstname"]))
-    echo "FName: ".$_POST["firstname"];
-if(isset($_POST["lastname"]))
-    echo "LName: ".$_POST["lastname"];
-if(isset($_POST["username"]))
-    echo "UName: ".$_POST["username"];
-if(isset($_POST["email"]))
-    echo "Email: ".$_POST["email"];
-if(isset($_POST["number"]))
-    echo "Number: ".$_POST["number"];
-if(isset($_POST["password"]))
-    echo "Password: ".$_POST["password"];
+if(isset($_POST["signup"])){
+    print_r($_POST);
+    if(!isset($_POST["firstname"]))
+        $errors["firstname"] = "Firstname must be filled.";
+    if(!isset($_POST["lastname"]))
+        $errors["lastname"] = "lastname must be filled.";
+    if(!isset($_POST["username"]))
+        $errors["username"] = "username must be filled.";
+    if(!isset($_POST["email"]))
+        $errors["email"] = "email must be filled.";
+
+    if(!isset($_POST["contact"]))
+        $errors["contact"] = "contact must be filled.";
+
+    if(!isset($_POST["password"]))
+        $errors["password"] = "password must be filled.";
+}
 ?>
 
 <!DOCTYPE html>
@@ -78,7 +77,7 @@ if(isset($_POST["password"]))
                 <input type='password' name="password" placeholder='Password' />
                 <?php if(isset($errors["password"])) echo "<div class='error'>".$errors["password"]."</div>" ?>
             </div>
-            <button>Signup</button>
+            <input type="submit" name="signup" value="Signup"/>
             <h4>Already have an account? <span>Login</span>
                 <h4>
         </form>
