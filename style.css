@@ -113,3 +113,21 @@ img#circle-2 {
   grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
+.error {
+  top: -25px;
+  right: 5px;
+  position: absolute;
+  padding: 5px 20px;
+  background: rgb(161, 45, 45);
+  color: #ffffff;
+  border-radius: 5px;
+}
+.error::after {
+  content: "";
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background: rgb(161, 45, 45);
+  bottom: -3px;
+  transform: rotate(45deg);
+}
