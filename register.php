@@ -1,4 +1,12 @@
 <?php
+$errors = [];
+$errors["firstname"] = "Firstname must be filled.";
+$errors["lastname"] = "lastname must be filled.";
+$errors["username"] = "username must be filled.";
+$errors["email"] = "email must be filled.";
+$errors["contact"] = "contact must be filled.";
+$errors["password"] = "password must be filled.";
+
 if(isset($_POST["firstname"]))
     echo "FName: ".$_POST["firstname"];
 if(isset($_POST["lastname"]))
@@ -35,19 +43,19 @@ if(isset($_POST["password"]))
                 <div class='field'>
                     <span class="iconify" data-icon="ant-design:user-outlined"></span>
                     <input type='text' name="firstname" placeholder='First name' />
-                    <div class="error">Error</div>
+                    <?php if(isset($errors["firstname"])) echo "<div class='error'>".$errors["firstname"]."</div>" ?>
                 </div>
                 <div class='field'>
                     <span class="iconify" data-icon="ant-design:user-outlined"></span>
                     <input type='text' name="lasttname" placeholder='Last name' />
-                    <div class="error">Error</div>
+                    <?php if(isset($errors["lastname"])) echo "<div class='error'>".$errors["lastname"]."</div>" ?>
                 </div>
             </div>
 
             <div class='field'>
                 <span class="iconify" data-icon="carbon:user-admin"></span>
                 <input type='text' name="username" placeholder='Username' />
-                <div class="error">Error</div>
+                <?php if(isset($errors["username"])) echo "<div class='error'>".$errors["username"]."</div>" ?>
             </div>
 
             <div class="two-cols">
@@ -55,20 +63,20 @@ if(isset($_POST["password"]))
             <div class='field'>
                 <span class="iconify" data-icon="dashicons:email"></span>
                 <input type='text' name="email" placeholder='Email' />
-                <div class="error">Error</div>
+                <?php if(isset($errors["email"])) echo "<div class='error'>".$errors["email"]."</div>" ?>
             </div>
                 <!-- Contact Number -->
             <div class='field'>
                 <span class="iconify" data-icon="akar-icons:phone"></span>
                 <input type='text' name="contact" placeholder='Contact Number' />
-                <div class="error">Error</div>
+                <?php if(isset($errors["contact"])) echo "<div class='error'>".$errors["contact"]."</div>" ?>
             </div>
             </div>
 
             <div class='field'>
                 <span class="iconify" data-icon="feather:lock"></span>
                 <input type='password' name="password" placeholder='Password' />
-                <div class="error">Error</div>
+                <?php if(isset($errors["password"])) echo "<div class='error'>".$errors["password"]."</div>" ?>
             </div>
             <button>Signup</button>
             <h4>Already have an account? <span>Login</span>
