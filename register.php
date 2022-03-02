@@ -3,19 +3,19 @@ $errors = [];
 
 if(isset($_POST["signup"])){
     print_r($_POST);
-    if(!isset($_POST["firstname"]))
+    if(!isset($_POST["firstname"]) || $_POST["firstname"] == null)
         $errors["firstname"] = "Firstname must be filled.";
-    if(!isset($_POST["lastname"]))
+    if(!isset($_POST["lastname"]) || $_POST["lastname"] == null)
         $errors["lastname"] = "lastname must be filled.";
-    if(!isset($_POST["username"]))
+    if(!isset($_POST["username"]) || $_POST["username"] == null)
         $errors["username"] = "username must be filled.";
-    if(!isset($_POST["email"]))
+    if(!isset($_POST["email"]) || $_POST["email"] == null)
         $errors["email"] = "email must be filled.";
 
-    if(!isset($_POST["contact"]))
+    if(!isset($_POST["contact"]) || $_POST["contact"] == null)
         $errors["contact"] = "contact must be filled.";
 
-    if(!isset($_POST["password"]))
+    if(!isset($_POST["password"]) || $_POST["password"] == null)
         $errors["password"] = "password must be filled.";
 }
 ?>
@@ -41,19 +41,19 @@ if(isset($_POST["signup"])){
             <div class="two-cols">
                 <div class='field'>
                     <span class="iconify" data-icon="ant-design:user-outlined"></span>
-                    <input type='text' name="firstname" placeholder='First name' />
+                    <input type='text' name="firstname" placeholder='First name'/>
                     <?php if(isset($errors["firstname"])) echo "<div class='error'>".$errors["firstname"]."</div>" ?>
                 </div>
                 <div class='field'>
                     <span class="iconify" data-icon="ant-design:user-outlined"></span>
-                    <input type='text' name="lasttname" placeholder='Last name' />
+                    <input type='text' name="lastname" placeholder='Last name'/>
                     <?php if(isset($errors["lastname"])) echo "<div class='error'>".$errors["lastname"]."</div>" ?>
                 </div>
             </div>
 
             <div class='field'>
                 <span class="iconify" data-icon="carbon:user-admin"></span>
-                <input type='text' name="username" placeholder='Username' />
+                <input type='text' name="username" placeholder='Username'/>
                 <?php if(isset($errors["username"])) echo "<div class='error'>".$errors["username"]."</div>" ?>
             </div>
 
@@ -61,20 +61,20 @@ if(isset($_POST["signup"])){
                 <!-- Email -->
             <div class='field'>
                 <span class="iconify" data-icon="dashicons:email"></span>
-                <input type='text' name="email" placeholder='Email' />
+                <input type='text' name="email" placeholder='Email'/>
                 <?php if(isset($errors["email"])) echo "<div class='error'>".$errors["email"]."</div>" ?>
             </div>
                 <!-- Contact Number -->
             <div class='field'>
                 <span class="iconify" data-icon="akar-icons:phone"></span>
-                <input type='text' name="contact" placeholder='Contact Number' />
+                <input type='text' name="contact" placeholder='Contact Number'/>
                 <?php if(isset($errors["contact"])) echo "<div class='error'>".$errors["contact"]."</div>" ?>
             </div>
             </div>
 
             <div class='field'>
                 <span class="iconify" data-icon="feather:lock"></span>
-                <input type='password' name="password" placeholder='Password' />
+                <input type='password' name="password" placeholder='Password'/>
                 <?php if(isset($errors["password"])) echo "<div class='error'>".$errors["password"]."</div>" ?>
             </div>
             <input type="submit" name="signup" value="Signup"/>
