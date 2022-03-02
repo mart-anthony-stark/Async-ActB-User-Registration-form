@@ -3,19 +3,27 @@ $errors = [];
 
 if(isset($_POST["signup"])){
     print_r($_POST);
-    if(!isset($_POST["firstname"]) || $_POST["firstname"] == null)
+    $fname = $_POST["firstname"];
+    $lname = $_POST["lastname"];
+    $username = $_POST["username"];
+    $email = $_POST["email"];
+    $contact = $_POST["contact"];
+    $password = $_POST["password"];
+
+
+    if(!isset($fname) || $fname == null)
         $errors["firstname"] = "Firstname must be filled.";
-    if(!isset($_POST["lastname"]) || $_POST["lastname"] == null)
+    if(!isset($lname) || $lname == null)
         $errors["lastname"] = "lastname must be filled.";
-    if(!isset($_POST["username"]) || $_POST["username"] == null)
+    if(!isset($username) || $username == null)
         $errors["username"] = "username must be filled.";
-    if(!isset($_POST["email"]) || $_POST["email"] == null)
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL))
         $errors["email"] = "email must be filled.";
 
-    if(!isset($_POST["contact"]) || $_POST["contact"] == null)
+    if(!isset($contact) || $contact == null)
         $errors["contact"] = "contact must be filled.";
 
-    if(!isset($_POST["password"]) || $_POST["password"] == null)
+    if(!isset($password) || $password == null)
         $errors["password"] = "password must be filled.";
 }
 ?>
