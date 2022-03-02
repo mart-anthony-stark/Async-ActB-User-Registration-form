@@ -90,7 +90,12 @@ form span#icon {
   font-size: 100px;
   text-align: center;
 }
+.field.sex {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+}
 #sex {
+  right: 0;
   width: 100%;
   height: 100%;
 }
