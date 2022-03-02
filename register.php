@@ -84,8 +84,8 @@ if(isset($_POST["signup"])){
                         </div>
                     </div>
                     <select name="sex" id="sex">
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
+                        <option <?php if(isset($_POST["sex"]) && $_POST["sex"] == 'male') echo "selected"?> value="male">Male</option>
+                        <option <?php if(isset($_POST["sex"]) && $_POST["sex"] == 'female') echo "selected"?> value="female">Female</option>
                     </select >
                     <?php if(isset($errors["sex"])) echo "<div class='error'>".$errors["sex"]."</div>" ?>
                 </div>
@@ -143,6 +143,9 @@ if(isset($_POST["signup"])){
                 female.classList.add("shown")
             }
         }
+
+        identifySex(<?php if(isset($_POST["sex"]))echo $_POST["sex"]?>)
+
         sexInput.addEventListener("change", (e) => {
            identifySex(e.target.value)
         })
