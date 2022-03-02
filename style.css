@@ -56,7 +56,7 @@ form input:focus {
 form input::placeholder {
   color: #fff;
 }
-form button {
+form input[type="submit"] {
   background: #fff;
   color: var(--c-pri);
   padding: 15px;
