@@ -6,6 +6,7 @@ if(isset($_POST["signup"])){
     $fname = $_POST["firstname"];
     $lname = $_POST["lastname"];
     $username = $_POST["username"];
+    $sex = $_POST["sex"];
     $email = $_POST["email"];
     $contact = $_POST["contact"];
     $password = $_POST["password"];
@@ -74,11 +75,14 @@ if(isset($_POST["signup"])){
                     <input type='text' name="username" placeholder='Username' value="<?php echo isset($_POST["username"]) ? $_POST["username"] : ''; ?>"/>
                     <?php if(isset($errors["username"])) echo "<div class='error'>".$errors["username"]."</div>" ?>
                 </div>
-                <div class='field'>
-                    <!-- <span class="iconify" data-icon="carbon:user-admin"></span> -->
+                <div class='field sex'>
+                    <div class="sex-icon">
+                        <?php if(isset($_POST["sex"]) && $_POST["sex"] == "male")echo "<span class='iconify' data-icon='el:Male'></span>" ?>
+                        <?php if(isset($_POST["sex"]) && $_POST["sex"] == "female")echo "<span class='iconify' data-icon='el:Female'></span>" ?>
+                    </div>
                     <select name="sex" id="sex">
-                        <option name="male">Male</option>
-                        <option name="female">Female</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
                     </select >
                     <?php if(isset($errors["sex"])) echo "<div class='error'>".$errors["sex"]."</div>" ?>
                 </div>
