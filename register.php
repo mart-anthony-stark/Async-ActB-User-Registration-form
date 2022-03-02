@@ -10,7 +10,6 @@ if(isset($_POST["signup"])){
     $contact = $_POST["contact"];
     $password = $_POST["password"];
 
-
     if(!isset($fname) || $fname == null)
         $errors["firstname"] = "Firstname must be filled.";
     if(!isset($lname) || $lname == null)
@@ -18,11 +17,10 @@ if(isset($_POST["signup"])){
     if(!isset($username) || $username == null)
         $errors["username"] = "username must be filled.";
     if(!filter_var($email, FILTER_VALIDATE_EMAIL))
-        $errors["email"] = "email must be filled.";
+        $errors["email"] = "Invalid email format.";
 
     if(!isset($contact) || $contact == null)
-        $errors["contact"] = "contact must be filled.";
-
+        $errors["contact"] = "Contact must be a number.";
     if(!isset($password) || $password == null)
         $errors["password"] = "password must be filled.";
 }
