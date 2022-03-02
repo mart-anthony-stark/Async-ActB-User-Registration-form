@@ -68,10 +68,20 @@ if(isset($_POST["signup"])){
                 </div>
             </div>
 
-            <div class='field'>
-                <span class="iconify" data-icon="carbon:user-admin"></span>
-                <input type='text' name="username" placeholder='Username' value="<?php echo isset($_POST["username"]) ? $_POST["username"] : ''; ?>"/>
-                <?php if(isset($errors["username"])) echo "<div class='error'>".$errors["username"]."</div>" ?>
+            <div class="two-cols">
+                <div class='field'>
+                    <span class="iconify" data-icon="carbon:user-admin"></span>
+                    <input type='text' name="username" placeholder='Username' value="<?php echo isset($_POST["username"]) ? $_POST["username"] : ''; ?>"/>
+                    <?php if(isset($errors["username"])) echo "<div class='error'>".$errors["username"]."</div>" ?>
+                </div>
+                <div class='field'>
+                    <!-- <span class="iconify" data-icon="carbon:user-admin"></span> -->
+                    <select>
+                        <option name="male">Male</option>
+                        <option name="female">Female</option>
+                    </select >
+                    <?php if(isset($errors["username"])) echo "<div class='error'>".$errors["username"]."</div>" ?>
+                </div>
             </div>
 
             <div class="two-cols">
