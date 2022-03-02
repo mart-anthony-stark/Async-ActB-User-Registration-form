@@ -12,27 +12,27 @@
 
 <body>
     <div id="root">
-        <form @submit='submitForm'>
+        <form>
             <span id="icon">
                 <i class="fa fa-user-circle" aria-hidden="true"></i>
             </span>
             <div class='field'>
                 <span class="iconify" data-icon="ant-design:user-outlined"></span>
-                <input type='text' placeholder='Fullname' />
+                <input type='text' name="fullname" placeholder='Fullname' />
             </div>
 
             <div class='field'>
                 <span class="iconify" data-icon="ant-design:user-outlined"></span>
-                <input type='text' placeholder='Username' />
+                <input type='text' name="username" placeholder='Username' />
             </div>
 
             <div class='field'>
                 <span class="iconify" data-icon="feather:lock"></span>
-                <input type='password' placeholder='Password' />
+                <input type='password' name="password" placeholder='Password' />
 
             </div>
             <button>Signup</button>
-            <h4>Already have an account? <span @click='login'>Login</span>
+            <h4>Already have an account? <span>Login</span>
                 <h4>
         </form>
     </div>
