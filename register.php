@@ -2,7 +2,6 @@
 $errors = [];
 
 if(isset($_POST["signup"])){
-    print_r($_POST);
     $fname = $_POST["firstname"];
     $lname = $_POST["lastname"];
     $username = $_POST["username"];
@@ -138,7 +137,6 @@ if(isset($_POST["signup"])){
                 female.classList.remove("shown")
                 female.classList.add("hidden")
             }else if(sex === 'female'){
-                console.log("fmaaa")
                 male.classList.remove("shown")
                 male.classList.add("hidden")
                 female.classList.remove("hidden")
