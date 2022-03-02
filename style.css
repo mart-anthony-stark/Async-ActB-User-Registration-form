@@ -140,3 +140,9 @@ img#circle-2 {
   bottom: -3px;
   transform: rotate(45deg);
 }
+.hidden {
+  display: none;
+}
+.shown {
+  display: block;
+}
