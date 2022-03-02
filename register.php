@@ -77,8 +77,12 @@ if(isset($_POST["signup"])){
                 </div>
                 <div class='field sex'>
                     <div class="sex-icon">
-                        <?php if(isset($_POST["sex"]) && $_POST["sex"] == "male")echo "<span class='iconify' data-icon='el:Male'></span>" ?>
-                        <?php if(isset($_POST["sex"]) && $_POST["sex"] == "female")echo "<span class='iconify' data-icon='el:Female'></span>" ?>
+                        <div id="male-icon" class="shown">
+                            <span class='iconify' data-icon='el:male'></span>
+                        </div>
+                        <div id="female-icon" class="hidden">
+                            <span class='iconify' data-icon='el:female'></span>
+                        </div>
                     </div>
                     <select name="sex" id="sex">
                         <option value="male">Male</option>
@@ -121,6 +125,27 @@ if(isset($_POST["signup"])){
 
 
     <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+    <script>
+        const sexInput = document.querySelector("#sex")
+        const icon = document.querySelector('.sex-icon')
+        const male = document.querySelector('#male-icon')
+        const female = document.querySelector('#female-icon')
+        sexInput.addEventListener("change", (e) => {
+            console.log(e.target.value)
+            if(e.target.value === 'male'){
+                male.classList.remove("hidden")
+                male.classList.add("shown")
+                female.classList.remove("shown")
+                female.classList.add("hidden")
+            }else if(e.target.value === 'female'){
+                console.log("fmaaa")
+                male.classList.remove("shown")
+                male.classList.add("hidden")
+                female.classList.remove("hidden")
+                female.classList.add("shown")
+            }
+        })
+    </script>
 </body>
 
 </html>
