@@ -35,35 +35,40 @@ if(isset($_POST["password"]))
                 <div class='field'>
                     <span class="iconify" data-icon="ant-design:user-outlined"></span>
                     <input type='text' name="firstname" placeholder='First name' />
+                    <div class="error">Error</div>
                 </div>
                 <div class='field'>
                     <span class="iconify" data-icon="ant-design:user-outlined"></span>
                     <input type='text' name="lasttname" placeholder='Last name' />
+                    <div class="error">Error</div>
                 </div>
             </div>
 
             <div class='field'>
                 <span class="iconify" data-icon="carbon:user-admin"></span>
                 <input type='text' name="username" placeholder='Username' />
+                <div class="error">Error</div>
             </div>
 
             <div class="two-cols">
                 <!-- Email -->
             <div class='field'>
-            <span class="iconify" data-icon="dashicons:email"></span>
+                <span class="iconify" data-icon="dashicons:email"></span>
                 <input type='text' name="email" placeholder='Email' />
+                <div class="error">Error</div>
             </div>
                 <!-- Contact Number -->
             <div class='field'>
-            <span class="iconify" data-icon="akar-icons:phone"></span>
+                <span class="iconify" data-icon="akar-icons:phone"></span>
                 <input type='text' name="contact" placeholder='Contact Number' />
+                <div class="error">Error</div>
             </div>
             </div>
 
             <div class='field'>
                 <span class="iconify" data-icon="feather:lock"></span>
                 <input type='password' name="password" placeholder='Password' />
-
+                <div class="error">Error</div>
             </div>
             <button>Signup</button>
             <h4>Already have an account? <span>Login</span>
