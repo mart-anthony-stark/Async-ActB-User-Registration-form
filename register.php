@@ -76,11 +76,11 @@ if(isset($_POST["signup"])){
                 </div>
                 <div class='field'>
                     <!-- <span class="iconify" data-icon="carbon:user-admin"></span> -->
-                    <select>
+                    <select name="sex" id="sex">
                         <option name="male">Male</option>
                         <option name="female">Female</option>
                     </select >
-                    <?php if(isset($errors["username"])) echo "<div class='error'>".$errors["username"]."</div>" ?>
+                    <?php if(isset($errors["sex"])) echo "<div class='error'>".$errors["sex"]."</div>" ?>
                 </div>
             </div>
 
