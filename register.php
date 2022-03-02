@@ -1,3 +1,18 @@
+<?php
+if(isset($_POST["firstname"]))
+    echo "FName: ".$_POST["firstname"];
+if(isset($_POST["lastname"]))
+    echo "LName: ".$_POST["lastname"];
+if(isset($_POST["username"]))
+    echo "UName: ".$_POST["username"];
+if(isset($_POST["email"]))
+    echo "Email: ".$_POST["email"];
+if(isset($_POST["number"]))
+    echo "Number: ".$_POST["number"];
+if(isset($_POST["password"]))
+    echo "Password: ".$_POST["password"];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,18 +27,37 @@
 
 <body>
     <div id="root">
-        <form>
+        <form action="register.php" method="POST">
             <span id="icon">
                 <i class="fa fa-user-circle" aria-hidden="true"></i>
             </span>
-            <div class='field'>
-                <span class="iconify" data-icon="ant-design:user-outlined"></span>
-                <input type='text' name="fullname" placeholder='Fullname' />
+            <div class="two-cols">
+                <div class='field'>
+                    <span class="iconify" data-icon="ant-design:user-outlined"></span>
+                    <input type='text' name="firstname" placeholder='First name' />
+                </div>
+                <div class='field'>
+                    <span class="iconify" data-icon="ant-design:user-outlined"></span>
+                    <input type='text' name="lasttname" placeholder='Last name' />
+                </div>
             </div>
 
             <div class='field'>
-                <span class="iconify" data-icon="ant-design:user-outlined"></span>
+                <span class="iconify" data-icon="carbon:user-admin"></span>
                 <input type='text' name="username" placeholder='Username' />
+            </div>
+
+            <div class="two-cols">
+                <!-- Email -->
+            <div class='field'>
+            <span class="iconify" data-icon="dashicons:email"></span>
+                <input type='text' name="email" placeholder='Email' />
+            </div>
+                <!-- Contact Number -->
+            <div class='field'>
+            <span class="iconify" data-icon="akar-icons:phone"></span>
+                <input type='text' name="contact" placeholder='Contact Number' />
+            </div>
             </div>
 
             <div class='field'>
