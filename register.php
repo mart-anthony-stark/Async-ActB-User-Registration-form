@@ -13,16 +13,27 @@ if(isset($_POST["signup"])){
     if(!isset($fname) || $fname == null)
         $errors["firstname"] = "Firstname must be filled.";
     if(!isset($lname) || $lname == null)
-        $errors["lastname"] = "lastname must be filled.";
+        $errors["lastname"] = "Lastname must be filled.";
     if(!isset($username) || $username == null)
-        $errors["username"] = "username must be filled.";
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+        $errors["username"] = "Username must be filled.";
+
+    if(!isset($email) || $email == null)
+        $errors["email"] = "Email must be filled.";
+    else if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+        // email format is invalid
         $errors["email"] = "Invalid email format.";
 
     if(!isset($contact) || $contact == null)
-        $errors["contact"] = "Contact must be a number.";
+        $errors["contact"] = "Contact must be filled.";
+    else if(!preg_match("/^[0-9]{11}$/", $contact)) {
+        // contact number is invalid - must be all numbers
+        $errors["contact"] = "Contact must be 11-digits";
+      }
+
     if(!isset($password) || $password == null)
-        $errors["password"] = "password must be filled.";
+        $errors["password"] = "Password must be filled.";
+    else if(strlen($password) < 8)
+        $errors["password"] = "Password must be atleast 8 characters.";
 }
 ?>
 
