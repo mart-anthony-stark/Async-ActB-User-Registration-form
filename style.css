@@ -140,6 +140,7 @@ img#circle-2 {
   color: #ffffff;
   border-radius: 5px;
   font-size: 14px;
+  cursor: pointer;
 }
 .error::after {
   content: "";
