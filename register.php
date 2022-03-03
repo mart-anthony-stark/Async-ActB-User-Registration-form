@@ -74,7 +74,7 @@ if(isset($_POST["signup"])){
 
                 <div class="two-cols">
                     <div class='field'>
-                        <span class="iconify" data-icon="ant-design:user-outlined"></span>
+                        <span class="iconify" data-icon="akar-icons:location"></span>
                         <input type='text' name="birthplace" placeholder='Birthplace' value="<?php echo isset($_POST["birthplace"]) ? $_POST["birthplace"] : ''; ?>"/>
                         <?php if(isset($errors["birthplace"])) echo "<div class='error'>".$errors["birthplace"]."</div>" ?>
                     </div>
