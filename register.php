@@ -4,7 +4,7 @@ $errors = [];
 if(isset($_POST["signup"])){
     $fname = $_POST["firstname"];
     $lname = $_POST["lastname"];
-    $username = $_POST["username"];
+    $address = $_POST["address"];
     $sex = $_POST["sex"];
     $email = $_POST["email"];
     $contact = $_POST["contact"];
@@ -14,8 +14,8 @@ if(isset($_POST["signup"])){
         $errors["firstname"] = "Firstname must be filled.";
     if(!isset($lname) || $lname == null)
         $errors["lastname"] = "Lastname must be filled.";
-    if(!isset($username) || $username == null)
-        $errors["username"] = "Username must be filled.";
+    if(!isset($address) || $address == null)
+        $errors["address"] = "Address must be filled.";
 
     if(!isset($email) || $email == null)
         $errors["email"] = "Email must be filled.";
@@ -75,8 +75,8 @@ if(isset($_POST["signup"])){
                 <div class="two-cols">
                     <div class='field'>
                         <span class="iconify" data-icon="carbon:user-admin"></span>
-                        <input type='text' name="username" placeholder='Username' value="<?php echo isset($_POST["username"]) ? $_POST["username"] : ''; ?>"/>
-                        <?php if(isset($errors["username"])) echo "<div class='error'>".$errors["username"]."</div>" ?>
+                        <input type='text' name="address" placeholder='Address' value="<?php echo isset($_POST["address"]) ? $_POST["address"] : ''; ?>"/>
+                        <?php if(isset($errors["address"])) echo "<div class='error'>".$errors["address"]."</div>" ?>
                     </div>
                     <div class='field sex'>
                         <div class="sex-icon">
