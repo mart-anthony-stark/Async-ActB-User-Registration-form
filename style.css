@@ -157,3 +157,6 @@ img#circle-2 {
 .shown {
   display: block;
 }
+.gap-4 {
+  gap: 40px;
+}
