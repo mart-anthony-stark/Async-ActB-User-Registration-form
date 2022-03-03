@@ -9,7 +9,14 @@ if(isset($_POST["signup"])){
     $birthplace = $_POST["birthplace"];
     $email = $_POST["email"];
     $contact = $_POST["contact"];
-    $password = $_POST["password"];
+    $nationality = $_POST["nationality"];
+    $religion = $_POST["religion"];
+    $highschool = $_POST["highschool"];
+    $college = $_POST["college"];
+    $mother = $_POST["mother"];
+    $father = $_POST["father"];
+    $mOccupation = $_POST["mOccupation"];
+    $fOccupation = $_POST["fOccupation"];
 
     if(!isset($fname) || $fname == null)
         $errors["firstname"] = "Firstname must be filled.";
@@ -19,6 +26,22 @@ if(isset($_POST["signup"])){
         $errors["address"] = "Address must be filled.";
     if(!isset($birthplace) || $birthplace == null)
         $errors["birthplace"] = "Birthplace must be filled.";
+    if(!isset($nationality) || $nationality == null)
+        $errors["nationality"] = "Nationality must be filled.";
+    if(!isset($religion) || $religion == null)
+        $errors["religion"] = "Religion must be filled.";
+    if(!isset($highschool) || $highschool == null)
+        $errors["highschool"] = "Highschool must be filled.";
+    if(!isset($college) || $college == null)
+        $errors["college"] = "College must be filled.";
+    if(!isset($mother) || $mother == null)
+        $errors["mother"] = "Mother's name must be filled.";
+    if(!isset($father) || $father == null)
+        $errors["father"] = "Father's name must be filled.";
+    if(!isset($mOccupation) || $mOccupation == null)
+        $errors["mOccupation"] = "Occupation must be filled.";
+    if(!isset($fOccupation) || $fOccupation == null)
+        $errors["fOccupation"] = "Occupation must be filled.";
 
     if(!isset($email) || $email == null)
         $errors["email"] = "Email must be filled.";
@@ -126,10 +149,17 @@ if(isset($_POST["signup"])){
                 </div>
                 </div>
 
-                <div class='field'>
-                    <span class="iconify" data-icon="feather:lock"></span>
-                    <input type='password' name="password" placeholder='Password' value="<?php echo isset($_POST["password"]) ? $_POST["password"] : ''; ?>"/>
-                    <?php if(isset($errors["password"])) echo "<div class='error'>".$errors["password"]."</div>" ?>
+                <div class="two-cols">
+                    <div class='field'>
+                        <span class="iconify" data-icon="clarity:flag-line"></span>
+                        <input type='text' name="nationality" placeholder='Nationality' value="<?php echo isset($_POST["nationality"]) ? $_POST["nationality"] : ''; ?>"/>
+                        <?php if(isset($errors["nationality"])) echo "<div class='error'>".$errors["nationality"]."</div>" ?>
+                    </div>
+                    <div class='field'>
+                        <span class="iconify" data-icon="bx:church"></span>
+                        <input type='text' name="religion" placeholder='Religion' value="<?php echo isset($_POST["religion"]) ? $_POST["religion"] : ''; ?>"/>
+                        <?php if(isset($errors["religion"])) echo "<div class='error'>".$errors["religion"]."</div>" ?>
+                    </div>
                 </div>
             </div>
 
@@ -137,6 +167,42 @@ if(isset($_POST["signup"])){
             <div class="col-2">
                 <!-- Education -->
                 <h3>Education</h3>
+                <div class='field'>
+                    <span class="iconify" data-icon="akar-icons:book"></span>
+                    <input type='text' name="highschool" placeholder='Highschool' value="<?php echo isset($_POST["highschool"]) ? $_POST["highschool"] : ''; ?>"/>
+                    <?php if(isset($errors["highschool"])) echo "<div class='error'>".$errors["highschool"]."</div>" ?>
+                </div>
+                <div class='field'>
+                    <span class="iconify" data-icon="maki:college"></span>
+                    <input type='text' name="college" placeholder='College' value="<?php echo isset($_POST["college"]) ? $_POST["college"] : ''; ?>"/>
+                    <?php if(isset($errors["college"])) echo "<div class='error'>".$errors["college"]."</div>" ?>
+                </div>
+
+                <h3 id="family-bg">Family Background</h3>
+                <div class="two-cols">
+                    <div class='field'>
+                        <span class="iconify" data-icon="ic:sharp-girl"></span>
+                        <input type='text' name="mother" placeholder="Mother's Name" value="<?php echo isset($_POST["mother"]) ? $_POST["mother"] : ''; ?>"/>
+                        <?php if(isset($errors["mother"])) echo "<div class='error'>".$errors["mother"]."</div>" ?>
+                    </div>
+                    <div class='field'>
+                        <span class="iconify" data-icon="ic:outline-work-outline"></span>
+                        <input type='text' name="mOccupation" placeholder="Occupation" value="<?php echo isset($_POST["mOccupation"]) ? $_POST["mOccupation"] : ''; ?>"/>
+                        <?php if(isset($errors["mOccupation"])) echo "<div class='error'>".$errors["mOccupation"]."</div>" ?>
+                    </div>
+                </div>
+                <div class="two-cols">
+                    <div class='field'>
+                        <span class="iconify" data-icon="ic:twotone-boy"></span>
+                        <input type='text' name="father" placeholder="Father's Name" value="<?php echo isset($_POST["father"]) ? $_POST["father"] : ''; ?>"/>
+                        <?php if(isset($errors["father"])) echo "<div class='error'>".$errors["father"]."</div>" ?>
+                    </div>
+                    <div class='field'>
+                        <span class="iconify" data-icon="ic:outline-work-outline"></span>
+                        <input type='text' name="fOccupation" placeholder="Occupation" value="<?php echo isset($_POST["fOccupation"]) ? $_POST["fOccupation"] : ''; ?>"/>
+                        <?php if(isset($errors["fOccupation"])) echo "<div class='error'>".$errors["fOccupation"]."</div>" ?>
+                    </div>
+                </div>
             </div>
         </div>
 
