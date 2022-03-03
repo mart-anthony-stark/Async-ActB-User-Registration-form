@@ -132,13 +132,14 @@ img#circle-2 {
   gap: 10px;
 }
 .error {
-  top: -25px;
+  top: -35px;
   right: 5px;
   position: absolute;
   padding: 5px 20px;
   background: rgb(161, 45, 45);
   color: #ffffff;
   border-radius: 5px;
+  font-size: 14px;
 }
 .error::after {
   content: "";
