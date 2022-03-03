@@ -74,6 +74,19 @@ if(isset($_POST["signup"])){
 
                 <div class="two-cols">
                     <div class='field'>
+                        <span class="iconify" data-icon="ant-design:user-outlined"></span>
+                        <input type='text' name="birthplace" placeholder='Birthplace' value="<?php echo isset($_POST["birthplace"]) ? $_POST["birthplace"] : ''; ?>"/>
+                        <?php if(isset($errors["birthplace"])) echo "<div class='error'>".$errors["birthplace"]."</div>" ?>
+                    </div>
+                    <div class='field'>
+                        <span class="iconify" data-icon="cil:birthday-cake"></span>
+                        <input type='date' name="dob" placeholder='Date of Birth' value="<?php echo isset($_POST["dob"]) ? $_POST["dob"] : ''; ?>"/>
+                        <?php if(isset($errors["dob"])) echo "<div class='error'>".$errors["dob"]."</div>" ?>
+                    </div>
+                </div>
+
+                <div class="two-cols">
+                    <div class='field'>
                     <span class="iconify" data-icon="el:home-alt"></span>
                         <input type='text' name="address" placeholder='Address' value="<?php echo isset($_POST["address"]) ? $_POST["address"] : ''; ?>"/>
                         <?php if(isset($errors["address"])) echo "<div class='error'>".$errors["address"]."</div>" ?>
