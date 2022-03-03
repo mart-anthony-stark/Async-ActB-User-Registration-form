@@ -154,7 +154,7 @@ if(isset($_POST["signup"])){
         const icon = document.querySelector('.sex-icon')
         const male = document.querySelector('#male-icon')
         const female = document.querySelector('#female-icon')
-
+        const errors = document.querySelectorAll(".error")
         const identifySex = (sex) => {
             if(sex === 'male'){
                 male.classList.remove("hidden")
@@ -173,6 +173,12 @@ if(isset($_POST["signup"])){
 
         sexInput.addEventListener("change", (e) => {
            identifySex(e.target.value)
+        })
+
+        errors.forEach(err => {
+            err.addEventListener('click', (e)=>{
+                err.style.display = "none"
+            })
         })
     </script>
 </body>
