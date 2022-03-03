@@ -6,6 +6,7 @@ if(isset($_POST["signup"])){
     $lname = $_POST["lastname"];
     $address = $_POST["address"];
     $sex = $_POST["sex"];
+    $birthplace = $_POST["birthplace"];
     $email = $_POST["email"];
     $contact = $_POST["contact"];
     $password = $_POST["password"];
@@ -16,6 +17,8 @@ if(isset($_POST["signup"])){
         $errors["lastname"] = "Lastname must be filled.";
     if(!isset($address) || $address == null)
         $errors["address"] = "Address must be filled.";
+    if(!isset($birthplace) || $birthplace == null)
+        $errors["birthplace"] = "Birthplace must be filled.";
 
     if(!isset($email) || $email == null)
         $errors["email"] = "Email must be filled.";
@@ -56,7 +59,7 @@ if(isset($_POST["signup"])){
                 <i class="fa fa-user-circle" aria-hidden="true"></i>
             </span>
             
-            <div class="two-cols">
+            <div class="two-cols gap-4">
                 <div class="col-1">
                 <h3>Personal details</h3>
                 <div class="two-cols">
@@ -132,7 +135,8 @@ if(isset($_POST["signup"])){
 
             <!-- Second column -->
             <div class="col-2">
-                
+                <!-- Education -->
+                <h3>Education</h3>
             </div>
         </div>
 
