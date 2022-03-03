@@ -55,62 +55,130 @@ if(isset($_POST["signup"])){
             <span id="icon">
                 <i class="fa fa-user-circle" aria-hidden="true"></i>
             </span>
+            
             <div class="two-cols">
-                <div class='field'>
-                    <span class="iconify" data-icon="ant-design:user-outlined"></span>
-                    <input type='text' name="firstname" placeholder='First name' value="<?php echo isset($_POST["firstname"]) ? $_POST["firstname"] : ''; ?>"/>
-                    <?php if(isset($errors["firstname"])) echo "<div class='error'>".$errors["firstname"]."</div>" ?>
-                </div>
-                <div class='field'>
-                    <span class="iconify" data-icon="ant-design:user-outlined"></span>
-                    <input type='text' name="lastname" placeholder='Last name' value="<?php echo isset($_POST["lastname"]) ? $_POST["lastname"] : ''; ?>"/>
-                    <?php if(isset($errors["lastname"])) echo "<div class='error'>".$errors["lastname"]."</div>" ?>
-                </div>
-            </div>
-
-            <div class="two-cols">
-                <div class='field'>
-                    <span class="iconify" data-icon="carbon:user-admin"></span>
-                    <input type='text' name="username" placeholder='Username' value="<?php echo isset($_POST["username"]) ? $_POST["username"] : ''; ?>"/>
-                    <?php if(isset($errors["username"])) echo "<div class='error'>".$errors["username"]."</div>" ?>
-                </div>
-                <div class='field sex'>
-                    <div class="sex-icon">
-                        <div id="male-icon" class="shown">
-                            <span class='iconify' data-icon='el:male'></span>
-                        </div>
-                        <div id="female-icon" class="hidden">
-                            <span class='iconify' data-icon='el:female'></span>
-                        </div>
+            
+                <div class="col-1">
+                <div class="two-cols">
+                    <div class='field'>
+                        <span class="iconify" data-icon="ant-design:user-outlined"></span>
+                        <input type='text' name="firstname" placeholder='First name' value="<?php echo isset($_POST["firstname"]) ? $_POST["firstname"] : ''; ?>"/>
+                        <?php if(isset($errors["firstname"])) echo "<div class='error'>".$errors["firstname"]."</div>" ?>
                     </div>
-                    <select name="sex" id="sex">
-                        <option <?php if(isset($_POST["sex"]) && $_POST["sex"] == 'male') echo "selected"?> value="male">Male</option>
-                        <option <?php if(isset($_POST["sex"]) && $_POST["sex"] == 'female') echo "selected"?> value="female">Female</option>
-                    </select >
-                    <?php if(isset($errors["sex"])) echo "<div class='error'>".$errors["sex"]."</div>" ?>
+                    <div class='field'>
+                        <span class="iconify" data-icon="ant-design:user-outlined"></span>
+                        <input type='text' name="lastname" placeholder='Last name' value="<?php echo isset($_POST["lastname"]) ? $_POST["lastname"] : ''; ?>"/>
+                        <?php if(isset($errors["lastname"])) echo "<div class='error'>".$errors["lastname"]."</div>" ?>
+                    </div>
+                </div>
+
+                <div class="two-cols">
+                    <div class='field'>
+                        <span class="iconify" data-icon="carbon:user-admin"></span>
+                        <input type='text' name="username" placeholder='Username' value="<?php echo isset($_POST["username"]) ? $_POST["username"] : ''; ?>"/>
+                        <?php if(isset($errors["username"])) echo "<div class='error'>".$errors["username"]."</div>" ?>
+                    </div>
+                    <div class='field sex'>
+                        <div class="sex-icon">
+                            <div id="male-icon" class="shown">
+                                <span class='iconify' data-icon='el:male'></span>
+                            </div>
+                            <div id="female-icon" class="hidden">
+                                <span class='iconify' data-icon='el:female'></span>
+                            </div>
+                        </div>
+                        <select name="sex" id="sex">
+                            <option <?php if(isset($_POST["sex"]) && $_POST["sex"] == 'male') echo "selected"?> value="male">Male</option>
+                            <option <?php if(isset($_POST["sex"]) && $_POST["sex"] == 'female') echo "selected"?> value="female">Female</option>
+                        </select >
+                        <?php if(isset($errors["sex"])) echo "<div class='error'>".$errors["sex"]."</div>" ?>
+                    </div>
+                </div>
+
+                <div class="two-cols">
+                    <!-- Email -->
+                <div class='field'>
+                    <span class="iconify" data-icon="dashicons:email"></span>
+                    <input type='text' name="email" placeholder='Email' value="<?php echo isset($_POST["email"]) ? $_POST["email"] : ''; ?>"/>
+                    <?php if(isset($errors["email"])) echo "<div class='error'>".$errors["email"]."</div>" ?>
+                </div>
+                    <!-- Contact Number -->
+                <div class='field'>
+                    <span class="iconify" data-icon="akar-icons:phone"></span>
+                    <input type='text' name="contact" placeholder='Contact Number' value="<?php echo isset($_POST["contact"]) ? $_POST["contact"] : ''; ?>"/>
+                    <?php if(isset($errors["contact"])) echo "<div class='error'>".$errors["contact"]."</div>" ?>
+                </div>
+                </div>
+
+                <div class='field'>
+                    <span class="iconify" data-icon="feather:lock"></span>
+                    <input type='password' name="password" placeholder='Password' value="<?php echo isset($_POST["password"]) ? $_POST["password"] : ''; ?>"/>
+                    <?php if(isset($errors["password"])) echo "<div class='error'>".$errors["password"]."</div>" ?>
                 </div>
             </div>
 
-            <div class="two-cols">
-                <!-- Email -->
-            <div class='field'>
-                <span class="iconify" data-icon="dashicons:email"></span>
-                <input type='text' name="email" placeholder='Email' value="<?php echo isset($_POST["email"]) ? $_POST["email"] : ''; ?>"/>
-                <?php if(isset($errors["email"])) echo "<div class='error'>".$errors["email"]."</div>" ?>
-            </div>
-                <!-- Contact Number -->
-            <div class='field'>
-                <span class="iconify" data-icon="akar-icons:phone"></span>
-                <input type='text' name="contact" placeholder='Contact Number' value="<?php echo isset($_POST["contact"]) ? $_POST["contact"] : ''; ?>"/>
-                <?php if(isset($errors["contact"])) echo "<div class='error'>".$errors["contact"]."</div>" ?>
-            </div>
-            </div>
+            <!-- Second column -->
+            <div class="col-2">
+                <div class="two-cols">
+                    <div class='field'>
+                        <span class="iconify" data-icon="ant-design:user-outlined"></span>
+                        <input type='text' name="firstname" placeholder='First name' value="<?php echo isset($_POST["firstname"]) ? $_POST["firstname"] : ''; ?>"/>
+                        <?php if(isset($errors["firstname"])) echo "<div class='error'>".$errors["firstname"]."</div>" ?>
+                    </div>
+                    <div class='field'>
+                        <span class="iconify" data-icon="ant-design:user-outlined"></span>
+                        <input type='text' name="lastname" placeholder='Last name' value="<?php echo isset($_POST["lastname"]) ? $_POST["lastname"] : ''; ?>"/>
+                        <?php if(isset($errors["lastname"])) echo "<div class='error'>".$errors["lastname"]."</div>" ?>
+                    </div>
+                </div>
 
-            <div class='field'>
-                <span class="iconify" data-icon="feather:lock"></span>
-                <input type='password' name="password" placeholder='Password' value="<?php echo isset($_POST["password"]) ? $_POST["password"] : ''; ?>"/>
-                <?php if(isset($errors["password"])) echo "<div class='error'>".$errors["password"]."</div>" ?>
+                <div class="two-cols">
+                    <div class='field'>
+                        <span class="iconify" data-icon="carbon:user-admin"></span>
+                        <input type='text' name="username" placeholder='Username' value="<?php echo isset($_POST["username"]) ? $_POST["username"] : ''; ?>"/>
+                        <?php if(isset($errors["username"])) echo "<div class='error'>".$errors["username"]."</div>" ?>
+                    </div>
+                    <div class='field sex'>
+                        <div class="sex-icon">
+                            <div id="male-icon" class="shown">
+                                <span class='iconify' data-icon='el:male'></span>
+                            </div>
+                            <div id="female-icon" class="hidden">
+                                <span class='iconify' data-icon='el:female'></span>
+                            </div>
+                        </div>
+                        <select name="sex" id="sex">
+                            <option <?php if(isset($_POST["sex"]) && $_POST["sex"] == 'male') echo "selected"?> value="male">Male</option>
+                            <option <?php if(isset($_POST["sex"]) && $_POST["sex"] == 'female') echo "selected"?> value="female">Female</option>
+                        </select >
+                        <?php if(isset($errors["sex"])) echo "<div class='error'>".$errors["sex"]."</div>" ?>
+                    </div>
+                </div>
+
+                <div class="two-cols">
+                    <!-- Email -->
+                <div class='field'>
+                    <span class="iconify" data-icon="dashicons:email"></span>
+                    <input type='text' name="email" placeholder='Email' value="<?php echo isset($_POST["email"]) ? $_POST["email"] : ''; ?>"/>
+                    <?php if(isset($errors["email"])) echo "<div class='error'>".$errors["email"]."</div>" ?>
+                </div>
+                    <!-- Contact Number -->
+                <div class='field'>
+                    <span class="iconify" data-icon="akar-icons:phone"></span>
+                    <input type='text' name="contact" placeholder='Contact Number' value="<?php echo isset($_POST["contact"]) ? $_POST["contact"] : ''; ?>"/>
+                    <?php if(isset($errors["contact"])) echo "<div class='error'>".$errors["contact"]."</div>" ?>
+                </div>
+                </div>
+
+                <div class='field'>
+                    <span class="iconify" data-icon="feather:lock"></span>
+                    <input type='password' name="password" placeholder='Password' value="<?php echo isset($_POST["password"]) ? $_POST["password"] : ''; ?>"/>
+                    <?php if(isset($errors["password"])) echo "<div class='error'>".$errors["password"]."</div>" ?>
+                </div>
             </div>
+        </div>
+
+
             <input type="submit" name="signup" value="Signup"/>
             <h4>Already have an account? <span>Login</span>
                 <h4>
