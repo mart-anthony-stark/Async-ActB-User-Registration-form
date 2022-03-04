@@ -77,7 +77,7 @@ if(isset($_POST["signup"])){
 
 <body>
     <div id="root">
-        <form action="register.php" method="POST">
+        <form action="Salazar_IT2C_ASYNC_B.php" method="POST">
             <span id="icon">
                 <i class="fa fa-user-circle" aria-hidden="true"></i>
             </span>
